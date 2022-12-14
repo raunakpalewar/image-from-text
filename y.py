@@ -63,32 +63,17 @@ def download_images():
 
                 # request url, without usr_agent the permission gets denied
                 html = requests.get(searchurl, params=usr_agent)
-                #html = response.text
 
                 # find all divs where class='rg_meta'
                 soup = BeautifulSoup(html.text, 'html.parser')
-                #results = soup.findAll('img')
-                #results = soup.findAll('div', {'class': 'rg_meta'}, limit=n_images)
                 img= soup.find('img')
             
                 img=img.find_next('img')
-                # fig, ax = plt.subplots()
-                # fig.savefig('myimage.svg', format='svg', dpi=1200)
+      
                 print(img["src"]) 
                 # extract the link from the div tag
                 imagelinks=img["src"]
                 
-                # width,height = 'some_w', 'some_h'
-                # req = io.imread(img['src'])
-               
-                # this is a valid json string
-                #text_dict= json.load(img.text) # deserialize json to a Python dict
-                #link = text_dict['ou']
-                #image_type = text_dict['ity']
-                #imagelinks.append(img)
-
-                #print(f'found {len(imagelinks)} images')
-                #urllib.request.urlretrieve(img['src'], data+"_img_.png")
 
 
                 # open image link and save as file
@@ -100,7 +85,6 @@ def download_images():
                     with open(imagename, 'wb') as file:
                         file.write(response.content)
                         print('Done\n\n')
-                        # cv2.imwrite(img['src'], word+"_img_.png", cv2.resize(req, (width,height)))
 
                     print('All Done\n\n')
                 except:  
