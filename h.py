@@ -11,7 +11,7 @@ from skimage import io
 import cv2
 
 
-dataframe = openpyxl.load_workbook("F:\\PROJECTS\\project procohat\\pro\\book7000.xlsx")
+dataframe = openpyxl.load_workbook("book7000.xlsx")
  
 # Define variable to read sheet
 dataframe1 = dataframe.active
