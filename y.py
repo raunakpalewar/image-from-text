@@ -27,7 +27,7 @@ def main():
     download_images()
 
 def download_images():
-    dataframe = openpyxl.load_workbook("F:\\PROJECTS\\project procohat\\pro\\book7000.xlsx")
+    dataframe = openpyxl.load_workbook("book7000.xlsx")
     a=0
  
     # Define variable to read sheet
